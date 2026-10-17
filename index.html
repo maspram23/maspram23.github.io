@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Maspram Creative Studio | Portfolio</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: #121212;
+            color: #e0e0e0;
+            line-height: 1.6;
+            padding: 20px;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        header {
+            text-align: center;
+            padding: 60px 20px 40px;
+            border-bottom: 1px solid #2a2a2a;
+        }
+
+        header h1 {
+            font-size: 2.5rem;
+            letter-spacing: 2px;
+            color: #ffffff;
+            margin-bottom: 10px;
+        }
+
+        header p {
+            color: #888888;
+            font-size: 1.1rem;
+        }
+
+        .nav-links {
+            margin-top: 20px;
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+        }
+
+        .nav-links a {
+            color: #aaa;
+            text-decoration: none;
+            font-size: 0.9rem;
+            padding: 5px 12px;
+            border: 1px solid #333;
+            border-radius: 4px;
+            transition: all 0.3s ease;
+        }
+
+        .nav-links a:hover {
+            color: #fff;
+            border-color: #666;
+        }
+
+        section {
+            padding: 50px 0;
+            border-bottom: 1px solid #2a2a2a;
+        }
+
+        section h2 {
+            font-size: 1.5rem;
+            margin-bottom: 25px;
+            color: #ffffff;
+            letter-spacing: 1px;
+            position: relative;
+        }
+
+        section h2::after {
+            content: '';
+            display: block;
+            width: 40px;
+            height: 2px;
+            background: #ffffff;
+            margin-top: 8px;
+        }
+
+        /* Portfolio Grid */
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+        }
+
+        .card {
+            background-color: #1e1e1e;
+            border-radius: 8px;
+            overflow: hidden;
+            border: 1px solid #2d2d2d;
+            transition: transform 0.3s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+        }
+
+        .card img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            display: block;
+        }
+
+        .card-content {
+            padding: 20px;
+        }
+
+        .card-content h3 {
+            font-size: 1.2rem;
+            color: #fff;
+            margin-bottom: 8px;
+        }
+
+        .card-content p {
+            font-size: 0.9rem;
+            color: #aaa;
+            margin-bottom: 15px;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 8px 16px;
+            background-color: #ffffff;
+            color: #121212;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 0.85rem;
+            border-radius: 4px;
+        }
+
+        .btn:hover {
+            background-color: #ccc;
+        }
+
+        footer {
+            text-align: center;
+            padding: 40px 0 20px;
+            color: #666;
+            font-size: 0.85rem;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>MASPRAM CREATIVE STUDIO</h1>
+        <p>Architectural Photography • Visual Assets • Creative Merchandise</p>
+        <div class="nav-links">
+            <a href="#photography">Fotografi</a>
+            <a href="#merchandise">Merchandise</a>
+            <a href="#about">Tentang</a>
+        </div>
+    </header>
+
+    <!-- Photography Section -->
+    <section id="photography">
+        <h2>PORTFOLIO FOTOGRAFI</h2>
+        <div class="grid">
+            <div class="card">
+                <img src="https://via.placeholder.com/600x400/333/fff?text=Arsitektur+Kota" alt="Arsitektur">
+                <div class="card-content">
+                    <h3>Urban Architecture</h3>
+                    <p>Eksplorasi garis simetris, sudut arsitektur klasik, dan struktur bangunan kota.</p>
+                </div>
+            </div>
+            <div class="card">
+                <img src="https://via.placeholder.com/600x400/333/fff?text=Tekstur+Minimalis" alt="Tekstur">
+                <div class="card-content">
+                    <h3>Real Textures & Details</h3>
+                    <p>Dokumentasi detail fisik, pola dinding, dan bayangan alami berkualiats tinggi.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- POD Merchandise Section -->
+    <section id="merchandise">
+        <h2>CREATIVE MERCHANDISE</h2>
+        <div class="grid">
+            <div class="card">
+                <img src="https://via.placeholder.com/600x400/222/fff?text=Polo+Shirt+Mockup" alt="Polo Shirt">
+                <div class="card-content">
+                    <h3>Architectural Polo Shirt</h3>
+                    <p>Koleksi pakaian bermotif fotografi arsitektur minimalis dengan bahan Cotton Combed 24s.</p>
+                    <a href="URL_TOKO_CIPTALOKA_MU" class="btn" target="_blank">Lihat di Ciptaloka</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about">
+        <h2>TENTANG MASPRAM</h2>
+        <p>Berbasis di Semarang, Maspram Creative Studio berfokus pada estetika visual fotografi arsitektur, pembuatan aset digital, dan desain apparel minimalis.</p>
+    </section>
+
+    <footer>
+        <p>&copy; 2026 Maspram Creative Studio. All rights reserved.</p>
+    </footer>
+
+</body>
+</html>
