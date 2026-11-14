@@ -1,57 +1,903 @@
-<!doctype html>
-<html lang="id">
+<!DOCTYPE html>
+<html lang="id" data-theme="dark">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="theme-color" content="#f4f1eb">
-  <meta name="description" content="Portofolio fotografi Sigit Pramono | MasPram— cerita, cahaya, dan karya yang bisa dibawa pulang.">
-  <title>Sigit Pramono | MasPram — Fotografer & Visual Storyteller</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="preconnect" href="https://images.unsplash.com">
-  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,500;0,600;1,500;1,600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Maspram — Sigit Pramono · Fotografi &amp; Kode</title>
+<meta name="description" content="Portofolio Maspram (Sigit Pramono) — fotografer dan developer. Galeri foto, aplikasi PAKU, dan toko POD.">
+<meta name="author" content="Sigit Pramono">
+<meta name="theme-color" content="#08090b">
+
+<!-- Open Graph -->
+<meta property="og:type" content="website">
+<meta property="og:title" content="Maspram — Fotografi &amp; Kode">
+<meta property="og:description" content="Menangkap cahaya, merakit ide. Galeri foto, aplikasi, dan toko POD Maspram.">
+<meta property="og:image" content="assets/img/logobk.png">
+<meta name="twitter:card" content="summary_large_image">
+
+<link rel="icon" type="image/png" href="assets/img/logobk.png">
+<link rel="apple-touch-icon" href="assets/img/logobk.png">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="assets/css/style.css">
+
+<!-- Set tema sebelum render supaya tidak ada flash -->
+<script>
+  try {
+    var savedTheme = localStorage.getItem("mp-theme");
+    if (savedTheme === "light" || savedTheme === "dark") {
+      document.documentElement.setAttribute("data-theme", savedTheme);
+    }
+  } catch (e) {}
+</script>
 </head>
 <body>
-  <header class="topbar">
-    <a class="brand" href="#home" aria-label="Sigit Pramono | MasPram, beranda"><span class="brand-mark">sp<span>.</span></span><span class="brand-name">SIGIT PRAMONO | MASPRAM<br><small>PORTOFOLIO</small></span></a>
-    <button class="menu-toggle" aria-label="Buka menu" aria-expanded="false"><span></span><span></span></button>
-    <nav class="nav" aria-label="Navigasi utama"><a href="#karya">Karya</a><a href="#tentang">Tentang</a><a href="#print">Print shop</a><a href="#kontak" class="nav-contact">Hubungi saya <span>↗</span></a></nav>
-  </header>
 
-  <main>
-    <section class="hero" id="home">
-      <div class="hero-image" role="img" aria-label="Pemandangan pegunungan berkabut saat matahari terbit"></div>
-      <div class="hero-shade"></div>
-      <div class="hero-content"><p class="eyebrow light"><i></i> FOTOGRAFER · INDONESIA</p><h1>Menangkap yang<br>sering <em>terlewat.</em></h1><p class="hero-sub">Saya Sigit Pramono. Menemukan cerita dalam cahaya, tempat, dan momen-momen kecil di antaranya.</p><a class="hero-link" href="#karya">JELAJAHI KARYA <span>↓</span></a></div>
-      <div class="hero-caption"><span>01 — 04</span><span class="caption-line"></span><span>DI ANTARA CAHAYA DAN SUNYI</span></div>
-      <div class="hero-side">CERITA VISUAL DARI PERJALANAN</div>
-    </section>
+<a class="skip-link" href="#main">Lompat ke konten utama</a>
 
-    <section class="intro section-wrap" id="tentang"><div class="intro-left"><p class="eyebrow"><i></i> HALO, SAYA SIGIT PRAMONO | MASPRAM</p><div class="intro-portrait"><img src="profile.jpg" alt="Close-up foto Sigit Pramono"><span class="portrait-caption">SIGIT PRAMONO</span></div></div><div class="intro-copy"><h2>Dunia terasa berbeda<br>saat kita <em>melihat lebih dekat.</em></h2><p>Fotografi bagi saya adalah cara untuk berhenti sejenak. Dari lanskap yang luas sampai detail yang sederhana, setiap foto menyimpan cerita yang ingin saya bagikan — dan mungkin, Anda bawa pulang.</p><a class="text-link" href="#kontak">KENALI SAYA <span>↗</span></a></div><span class="intro-index">SP / 2025—26</span></section>
+<!-- ======================= PRELOADER ======================= -->
+<div class="preloader" id="preloader" aria-hidden="true">
+  <div class="preloader__inner">
+    <img src="assets/img/logowh.png" alt="" class="preloader__logo">
+    <div class="preloader__bar"><span></span></div>
+    <p class="preloader__text">Menyiapkan cahaya…</p>
+  </div>
+</div>
 
-    <section class="gallery section-wrap" id="karya">
-      <div class="section-head"><div><p class="eyebrow"><i></i> PILIHAN DARI LENSA SAYA</p><h2>Potongan <em>cerita.</em></h2></div><p class="section-description">Setiap tempat punya ritmenya sendiri.<br>Ini beberapa yang sempat saya temui.</p></div>
-      <div class="filters" role="group" aria-label="Filter foto"><button class="filter active" data-filter="all">Semua <sup>07</sup></button><button class="filter" data-filter="landscape">Lanskap <sup>03</sup></button><button class="filter" data-filter="travel">Perjalanan <sup>02</sup></button><button class="filter" data-filter="detail">Detail <sup>02</sup></button></div>
-      <div class="photo-grid">
-        <button class="photo-card photo-tall" data-category="landscape" data-title="Di balik kabut" data-location="JAWA BARAT, INDONESIA" aria-label="Lihat foto Di balik kabut"><img src="https://images.unsplash.com/photo-1470770841072-f978cf4d019e?auto=format&fit=crop&w=1200&q=85" alt="Danau dan pegunungan diselimuti kabut pagi" loading="lazy"><span class="photo-overlay"><span class="photo-meta">01 / LANSKAP <i>↗</i></span><strong>Di balik kabut</strong><small>Jawa Barat, Indonesia</small></span></button>
-        <button class="photo-card" data-category="travel" data-title="Industrial" data-location="SEMARANG, KIW" aria-label="Lihat foto Industrial"><img src="factory1.jpg" alt="Industrial" loading="lazy"><span class="photo-overlay"><span class="photo-meta">02 / INDUSTRIAL <i>↗</i></span><strong>Potret Industrial</strong><small>Semarang, Indonesia</small></span></button>
-        <button class="photo-card" data-category="detail" data-title="Cahaya di sela daun" data-location="YOGYAKARTA, INDONESIA" aria-label="Lihat foto Cahaya di sela daun"><img src="https://images.unsplash.com/photo-1448375240586-882707db888b?auto=format&fit=crop&w=1000&q=85" alt="Sinar matahari menembus pepohonan di hutan" loading="lazy"><span class="photo-overlay"><span class="photo-meta">03 / DETAIL <i>↗</i></span><strong>Cahaya di sela daun</strong><small>Yogyakarta, Indonesia</small></span></button>
-        <button class="photo-card" data-category="landscape" data-title="Garis cakrawala" data-location="NUSA TENGGARA, INDONESIA" aria-label="Lihat foto Garis cakrawala"><img src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=1000&q=85" alt="Bentang alam pegunungan dan langit senja" loading="lazy"><span class="photo-overlay"><span class="photo-meta">04 / LANSKAP <i>↗</i></span><strong>Garis cakrawala</strong><small>Nusa Tenggara, Indonesia</small></span></button>
-        <button class="photo-card" data-category="detail" data-title="Jejak di tanah basah" data-location="KALIMANTAN, INDONESIA" aria-label="Lihat foto Jejak di tanah basah"><img src="https://images.unsplash.com/photo-1440342359743-84fcb8c21c7c?auto=format&fit=crop&w=1000&q=85" alt="Jalan setapak di tengah hutan berkabut" loading="lazy"><span class="photo-overlay"><span class="photo-meta">05 / DETAIL <i>↗</i></span><strong>Jejak di tanah basah</strong><small>Kalimantan, Indonesia</small></span></button>
-        <button class="photo-card photo-wide" data-category="travel" data-title="Hari-hari di jalan" data-location="JAWA TIMUR, INDONESIA" aria-label="Lihat foto Hari-hari di jalan"><img src="https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&w=1400&q=85" alt="Pegunungan tinggi di bawah langit cerah" loading="lazy"><span class="photo-overlay"><span class="photo-meta">06 / PERJALANAN <i>↗</i></span><strong>Hari-hari di jalan</strong><small>Jawa Timur, Indonesia</small></span></button>
-        <button class="photo-card" data-category="landscape" data-title="Sebelum dunia bangun" data-location="JAWA TENGAH, INDONESIA" aria-label="Lihat foto Sebelum dunia bangun"><img src="https://images.unsplash.com/photo-1500534623283-312aade485b7?auto=format&fit=crop&w=1000&q=85" alt="Pemandangan alam berkabut di pagi hari" loading="lazy"><span class="photo-overlay"><span class="photo-meta">07 / LANSKAP <i>↗</i></span><strong>Sebelum dunia bangun</strong><small>Jawa Tengah, Indonesia</small></span></button>
+<!-- ======================= CHROME UI ======================= -->
+<div class="grain" aria-hidden="true"></div>
+<div class="scroll-progress" id="scrollProgress" aria-hidden="true"></div>
+<div class="cursor" id="cursor" aria-hidden="true">
+  <span class="cursor__ring"></span>
+  <span class="cursor__dot"></span>
+</div>
+
+<!-- ======================= NAVBAR ======================= -->
+<header class="nav" id="nav">
+  <div class="nav__inner">
+    <a class="brand" href="#home" aria-label="Maspram — kembali ke beranda">
+      <img src="assets/img/logowh.png" alt="" class="brand__logo" width="48" height="48">
+      <span class="brand__text">
+        <strong>maspram</strong>
+        <small>photography &amp; code</small>
+      </span>
+    </a>
+
+    <nav class="nav__links" aria-label="Navigasi utama">
+      <a href="#about" class="nav__link">Tentang</a>
+      <a href="#gallery" class="nav__link">Galeri</a>
+      <a href="#apps" class="nav__link">Aplikasi</a>
+      <a href="#store" class="nav__link">Toko POD</a>
+      <a href="#contact" class="nav__link">Kontak</a>
+    </nav>
+
+    <div class="nav__actions">
+      <button class="icon-btn" id="themeToggle" type="button" aria-label="Ganti tema terang atau gelap" aria-pressed="false">
+        <svg class="icon icon--moon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20.5 14.2A8.6 8.6 0 0 1 9.8 3.5 8.8 8.8 0 1 0 20.5 14.2Z"/></svg>
+        <svg class="icon icon--sun" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4.2"/><path d="M12 2v2.4M12 19.6V22M2 12h2.4M19.6 12H22M4.9 4.9l1.7 1.7M17.4 17.4l1.7 1.7M19.1 4.9l-1.7 1.7M6.6 17.4l-1.7 1.7"/></svg>
+      </button>
+      <a href="#contact" class="btn btn--sm nav__cta">
+        <span>Ngobrol Yuk</span>
+        <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+      </a>
+      <button class="hamburger" id="hamburger" type="button" aria-label="Buka menu" aria-expanded="false" aria-controls="mobileMenu">
+        <span></span><span></span>
+      </button>
+    </div>
+  </div>
+</header>
+
+<!-- Mobile menu -->
+<div class="mmenu" id="mobileMenu" aria-hidden="true">
+  <nav class="mmenu__nav" aria-label="Navigasi seluler">
+    <a href="#about"><span>01</span> Tentang</a>
+    <a href="#gallery"><span>02</span> Galeri</a>
+    <a href="#apps"><span>03</span> Aplikasi</a>
+    <a href="#store"><span>04</span> Toko POD</a>
+    <a href="#contact"><span>05</span> Kontak</a>
+  </nav>
+  <div class="mmenu__foot">
+    <p>Yogyakarta, Indonesia</p>
+    <a href="mailto:halo@maspram.com" data-email-text>halo@maspram.com</a>
+  </div>
+</div>
+
+<main id="main">
+
+  <!-- ======================= HERO ======================= -->
+  <section class="hero" id="home">
+    <canvas class="hero__canvas" id="bokeh" aria-hidden="true"></canvas>
+    <div class="hero__aura" aria-hidden="true"></div>
+
+    <div class="container hero__inner">
+      <div class="hero__copy">
+        <p class="eyebrow hero__eyebrow">
+          <span class="pulse"></span>
+          Sigit Pramono · Fotografer &amp; Developer
+        </p>
+
+        <h1 class="hero__title">
+          <span class="line"><span>Di balik</span></span>
+          <span class="line"><span>lensa <em class="serif">&amp;</em></span></span>
+          <span class="line"><span>baris <em class="serif accent">kode</em>.</span></span>
+        </h1>
+
+        <p class="hero__lead">
+          Saya <strong>Maspram</strong>. Menangkap cahaya lewat kamera, merakit ide
+          jadi aplikasi, lalu membawanya pulang ke atas kaos dan poster.
+        </p>
+
+        <p class="hero__role">
+          <span class="hero__role-label">Sekarang:</span>
+          <span class="role" id="role" data-roles="Fotografer,Developer,Visual Storyteller,POD Creator">Fotografer</span>
+          <span class="caret" aria-hidden="true"></span>
+        </p>
+
+        <div class="hero__actions">
+          <a href="#gallery" class="btn btn--primary" data-magnetic>
+            <span>Jelajahi Galeri</span>
+            <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+          </a>
+          <a href="#apps" class="btn btn--ghost" data-magnetic>
+            <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3v12M7 11l5 5 5-5M4 20h16"/></svg>
+            <span>Unduh Aplikasi</span>
+          </a>
+        </div>
+
+        <p class="hero__aside">
+          atau mampir ke
+          <a href="#store" class="link-underline">toko POD saya
+            <svg class="icon icon--xs" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9"/></svg>
+          </a>
+        </p>
+
+        <dl class="hero__stats">
+          <div class="stat">
+            <dt>Pengalaman</dt>
+            <dd><span data-count="8">0</span><span class="stat__suffix">+</span> <span class="stat__unit">tahun</span></dd>
+          </div>
+          <div class="stat">
+            <dt>Bingkai terkurasi</dt>
+            <dd><span data-count="126">0</span> <span class="stat__unit">foto</span></dd>
+          </div>
+          <div class="stat">
+            <dt>Data privat</dt>
+            <dd><span data-count="100">0</span><span class="stat__suffix">%</span> <span class="stat__unit">offline</span></dd>
+          </div>
+        </dl>
       </div>
-      <p class="gallery-note">* FOTO DI ATAS ADALAH FOTO CONTOH. GANTI DENGAN KARYA FOTOGRAFI ANDA SENDIRI.</p>
-    </section>
 
-    <section class="print-section" id="print"><div class="print-image"></div><div class="print-content"><p class="eyebrow light"><i></i> DARI LAYAR KE RUANG ANDA</p><h2>Simpan cerita<br>yang <em>Anda suka.</em></h2><p>Beberapa foto kini hadir sebagai produk yang bisa menemani keseharian Anda. Temukan koleksi print dan merchandise saya di Ciptaloka.</p><a class="shop-button" href="https://www.ciptaloka.com/" target="_blank" rel="noopener noreferrer">KUNJUNGI TOKO SAYA <span>↗</span></a><small class="shop-note">TAUTAN TOKO Ciptaloka DAPAT DIGANTI DENGAN LINK TOKO ANDA.</small></div></section>
+      <!-- 3D lens scene -->
+      <div class="hero__art" data-scene>
+        <div class="scene" id="scene">
+          <div class="scene__orbit">
+            <figure class="orbit-card orbit-card--1">
+              <img src="assets/img/hero-1.jpg" alt="" loading="eager" decoding="async" data-fallback="Frame 01">
+              <figcaption>01 / 35mm</figcaption>
+            </figure>
+            <figure class="orbit-card orbit-card--2">
+              <img src="assets/img/hero-2.jpg" alt="" loading="eager" decoding="async" data-fallback="Frame 02">
+              <figcaption>02 / f1.8</figcaption>
+            </figure>
+            <figure class="orbit-card orbit-card--3">
+              <img src="assets/img/hero-3.jpg" alt="" loading="eager" decoding="async" data-fallback="Frame 03">
+              <figcaption>03 / ISO 100</figcaption>
+            </figure>
+          </div>
 
-    <section class="contact section-wrap" id="kontak"><p class="eyebrow"><i></i> PUNYA CERITA UNTUK DIBUAT?</p><div class="contact-row"><h2>Mari buat<br>sesuatu yang <em>berarti.</em></h2><a class="contact-circle" href="mailto:sigitpramono2322@gmail.com" aria-label="Kirim email ke Sigit Pramono"><span>NGOBROL<br>YUK</span><b>↗</b></a></div><div class="contact-foot"><span>Kolaborasi, proyek, atau sekadar menyapa — pintu saya terbuka.</span><a href="mailto:sigitpramono2322@gmail.com">HALO@MasPram</a></div></section>
-  </main>
-  <footer class="footer"><a class="brand" href="#home"><span class="brand-mark">sp<span>.</span></span><span class="brand-name">SIGIT PRAMONO<br><small>PHOTOGRAPHER</small></span></a><span>© 2025 SIGIT PRAMONO · DIBUAT DENGAN RASA</span><a href="#home">KEMBALI KE ATAS ↑</a></footer>
+          <div class="lens" aria-hidden="true">
+            <div class="lens__halo"></div>
+            <div class="lens__body">
+              <div class="lens__ring lens__ring--outer"></div>
+              <div class="lens__ring lens__ring--teeth"></div>
+              <div class="lens__ring lens__ring--inner"></div>
+              <div class="lens__aperture"></div>
+              <div class="lens__glass"></div>
+              <div class="lens__glare"></div>
+              <span class="lens__brand">MP</span>
+              <span class="lens__spec">1:1.8&nbsp;&nbsp;35mm</span>
+            </div>
+          </div>
 
-  <dialog class="lightbox" aria-label="Pratinjau foto"><button class="lightbox-close" aria-label="Tutup foto">×</button><img src="" alt=""><div class="lightbox-caption"><strong></strong><span></span></div></dialog>
-  <script src="script.js"></script>
+          <span class="float-chip float-chip--1">f/1.8</span>
+          <span class="float-chip float-chip--2">ISO 100</span>
+          <span class="float-chip float-chip--3">1/250s</span>
+          <span class="scene__grid" aria-hidden="true"></span>
+        </div>
+        <p class="hero__art-caption" aria-hidden="true">
+          <span>Fig. 01</span> — Lens study, interactive
+        </p>
+      </div>
+    </div>
+
+    <div class="marquee" aria-hidden="true">
+      <div class="marquee__track">
+        <span>FOTOGRAFI</span><i>✳</i><span>CODING</span><i>✳</i><span>VISUAL STORY</span><i>✳</i><span>POD STORE</span><i>✳</i>
+        <span>FOTOGRAFI</span><i>✳</i><span>CODING</span><i>✳</i><span>VISUAL STORY</span><i>✳</i><span>POD STORE</span><i>✳</i>
+      </div>
+    </div>
+
+    <a href="#about" class="scroll-hint" aria-label="Gulir ke bagian tentang">
+      <span class="scroll-hint__mouse"><i></i></span>
+      <span class="scroll-hint__text">Gulir</span>
+    </a>
+  </section>
+
+  <!-- ======================= ABOUT ======================= -->
+  <section class="section about" id="about">
+    <div class="container">
+      <div class="section-head">
+        <p class="eyebrow" data-reveal><span class="eyebrow__num">01</span> Tentang</p>
+        <h2 class="section-title" data-reveal>
+          Bukan cuma klik.<br>
+          Ini soal <em class="serif accent">cahaya</em> dan <em class="serif">cerita</em>.
+        </h2>
+      </div>
+
+      <div class="about__grid">
+        <div class="about__visual" data-reveal>
+          <div class="portrait" data-tilt>
+            <span class="portrait__corner portrait__corner--tl"></span>
+            <span class="portrait__corner portrait__corner--tr"></span>
+            <span class="portrait__corner portrait__corner--bl"></span>
+            <span class="portrait__corner portrait__corner--br"></span>
+            <img src="assets/img/about-camera.jpg" alt="Kamera dan meja kerja Maspram" loading="lazy" decoding="async" data-fallback="Maspram">
+            <div class="portrait__scan" aria-hidden="true"></div>
+          </div>
+          <div class="portrait__meta">
+            <div>
+              <strong>Sigit Pramono</strong>
+              <span>Photographer · Developer</span>
+            </div>
+            <span class="badge-live"><i></i> Open for work</span>
+          </div>
+        </div>
+
+        <div class="about__copy">
+          <p class="about__lead" data-reveal>
+            Mulai dari kamera pinjaman dan satu folder berisi <em class="serif">file RAW</em>.
+            Sekarang saya menghabiskan hari-hari di antara tiga hal: mencari cahaya,
+            menulis kode, dan mengemas karya jadi sesuatu yang bisa kamu pegang.
+          </p>
+          <p data-reveal>
+            Bagi saya fotografi dan coding punya bahasa yang sama — komposisi, ritme,
+            dan kesabaran menunggu momen yang tepat. Bedanya cuma satu: satu selesai
+            dalam 1/250 detik, satu lagi dalam 250 baris.
+          </p>
+
+          <div class="services" data-reveal>
+            <article class="service">
+              <span class="service__no">A</span>
+              <h3>Fotografi</h3>
+              <p>Potret, jalanan, lanskap, dan detail. Tersedia untuk sesi personal maupun brand.</p>
+            </article>
+            <article class="service">
+              <span class="service__no">B</span>
+              <h3>Web &amp; App</h3>
+              <p>Landing page, portofolio, sampai aplikasi Android kecil yang benar-benar dipakai.</p>
+            </article>
+            <article class="service">
+              <span class="service__no">C</span>
+              <h3>POD Design</h3>
+              <p>Desain kaos, poster, dan tote bag. Karya foto yang keluar dari layar.</p>
+            </article>
+          </div>
+
+          <div class="toolkit" data-reveal>
+            <p class="toolkit__label">Perangkat &amp; alat</p>
+            <ul class="chips">
+              <li class="chip">Mirrorless + 35mm prime</li>
+              <li class="chip">Lightroom</li>
+              <li class="chip">VS Code</li>
+              <li class="chip">HTML / CSS / JS</li>
+              <li class="chip">Android</li>
+              <li class="chip">Canva</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ======================= GALLERY ======================= -->
+  <section class="section gallery" id="gallery">
+    <div class="container">
+      <div class="section-head section-head--split">
+        <div>
+          <p class="eyebrow" data-reveal><span class="eyebrow__num">02</span> Galeri</p>
+          <h2 class="section-title" data-reveal>
+            Arsip <em class="serif accent">cahaya</em>.
+          </h2>
+          <p class="section-sub" data-reveal>
+            Kumpulan bingkai yang saya pilih ulang. Klik salah satu untuk melihat
+            versi besarnya — hitam putih dulu, warna belakangan.
+          </p>
+        </div>
+        <p class="gallery__count" data-reveal>
+          <span id="galleryCount">12</span> <span>bingkai</span>
+        </p>
+      </div>
+
+      <div class="filters" data-reveal role="group" aria-label="Filter galeri">
+        <button class="filter is-active" type="button" data-filter="all">Semua <sup>12</sup></button>
+        <button class="filter" type="button" data-filter="landscape">Lanskap <sup>4</sup></button>
+        <button class="filter" type="button" data-filter="street">Jalanan <sup>3</sup></button>
+        <button class="filter" type="button" data-filter="portrait">Potret <sup>3</sup></button>
+        <button class="filter" type="button" data-filter="detail">Detail <sup>2</sup></button>
+      </div>
+
+      <div class="gallery__grid" id="galleryGrid">
+
+        <article class="g-card" data-cat="landscape" data-src="assets/img/gallery/01-mountains.jpg" data-title="Di Atas Awan" data-meta="Dieng, Jawa Tengah · 2025 · 35mm f/4" data-reveal>
+          <button class="g-media" type="button" aria-label="Buka foto: Di Atas Awan">
+            <span class="ph" aria-hidden="true"></span>
+            <img src="assets/img/gallery/01-mountains.jpg" alt="Pegunungan di atas lautan awan saat matahari terbit" loading="lazy" decoding="async" data-fallback="Dieng">
+            <span class="g-overlay">
+              <span class="g-overlay__title">Di Atas Awan</span>
+              <span class="g-overlay__meta">Dieng · 2025</span>
+              <span class="g-overlay__zoom">
+                <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="6.5"/><path d="M16 16l5 5M11 8.5v5M8.5 11h5"/></svg>
+              </span>
+            </span>
+          </button>
+          <div class="g-info">
+            <h3>Di Atas Awan</h3>
+            <p>Lanskap · 2025</p>
+          </div>
+        </article>
+
+        <article class="g-card g-card--tall" data-cat="portrait" data-src="assets/img/gallery/08-portrait-a.jpg" data-title="Biru di Sore" data-meta="Studio alam · 2024 · 50mm f/1.8" data-reveal>
+          <button class="g-media" type="button" aria-label="Buka foto: Biru di Sore">
+            <span class="ph" aria-hidden="true"></span>
+            <img src="assets/img/gallery/08-portrait-a.jpg" alt="Potret perempuan di depan dinding biru" loading="lazy" decoding="async" data-fallback="Golden Hour">
+            <span class="g-overlay">
+              <span class="g-overlay__title">Biru di Sore</span>
+              <span class="g-overlay__meta">Portrait · 2024</span>
+              <span class="g-overlay__zoom">
+                <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="6.5"/><path d="M16 16l5 5M11 8.5v5M8.5 11h5"/></svg>
+              </span>
+            </span>
+          </button>
+          <div class="g-info">
+            <h3>Biru di Sore</h3>
+            <p>Potret · 2024</p>
+          </div>
+        </article>
+
+        <article class="g-card" data-cat="street" data-src="assets/img/gallery/05-city-night.jpg" data-title="Kota yang Tak Tidur" data-meta="Jakarta · 2025 · 35mm f/2" data-reveal>
+          <button class="g-media" type="button" aria-label="Buka foto: Kota yang Tak Tidur">
+            <span class="ph" aria-hidden="true"></span>
+            <img src="assets/img/gallery/05-city-night.jpg" alt="Jalan kota di malam hari dengan lampu kendaraan" loading="lazy" decoding="async" data-fallback="Malioboro">
+            <span class="g-overlay">
+              <span class="g-overlay__title">Kota yang Tak Tidur</span>
+              <span class="g-overlay__meta">Street · 2025</span>
+              <span class="g-overlay__zoom">
+                <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="6.5"/><path d="M16 16l5 5M11 8.5v5M8.5 11h5"/></svg>
+              </span>
+            </span>
+          </button>
+          <div class="g-info">
+            <h3>Kota yang Tak Tidur</h3>
+            <p>Jalanan · 2025</p>
+          </div>
+        </article>
+
+        <article class="g-card g-card--wide" data-cat="landscape" data-src="assets/img/gallery/04-coast.jpg" data-title="Garis Cakrawala" data-meta="Pantai Selatan · 2024 · 24mm f/8" data-reveal>
+          <button class="g-media" type="button" aria-label="Buka foto: Garis Cakrawala">
+            <span class="ph" aria-hidden="true"></span>
+            <img src="assets/img/gallery/04-coast.jpg" alt="Garis cakrawala laut saat matahari terbenam" loading="lazy" decoding="async" data-fallback="Horizon">
+            <span class="g-overlay">
+              <span class="g-overlay__title">Garis Cakrawala</span>
+              <span class="g-overlay__meta">Pantai Selatan · 2024</span>
+              <span class="g-overlay__zoom">
+                <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="6.5"/><path d="M16 16l5 5M11 8.5v5M8.5 11h5"/></svg>
+              </span>
+            </span>
+          </button>
+          <div class="g-info">
+            <h3>Garis Cakrawala</h3>
+            <p>Lanskap · 2024</p>
+          </div>
+        </article>
+
+        <article class="g-card" data-cat="detail" data-src="assets/img/gallery/11-camera.jpg" data-title="Kamera Tua" data-meta="Makro · 2025 · 60mm f/2.8" data-reveal>
+          <button class="g-media" type="button" aria-label="Buka foto: Kamera Tua">
+            <span class="ph" aria-hidden="true"></span>
+            <img src="assets/img/gallery/11-camera.jpg" alt="Detail lensa dan bodi kamera analog" loading="lazy" decoding="async" data-fallback="Detail">
+            <span class="g-overlay">
+              <span class="g-overlay__title">Kamera Tua</span>
+              <span class="g-overlay__meta">Detail · 2025</span>
+              <span class="g-overlay__zoom">
+                <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="6.5"/><path d="M16 16l5 5M11 8.5v5M8.5 11h5"/></svg>
+              </span>
+            </span>
+          </button>
+          <div class="g-info">
+            <h3>Kamera Tua</h3>
+            <p>Detail · 2025</p>
+          </div>
+        </article>
+
+        <article class="g-card" data-cat="street" data-src="assets/img/gallery/06-street.jpg" data-title="Jalan Kosong" data-meta="New York · 2024 · 35mm f/2" data-reveal>
+          <button class="g-media" type="button" aria-label="Buka foto: Jalan Kosong">
+            <span class="ph" aria-hidden="true"></span>
+            <img src="assets/img/gallery/06-street.jpg" alt="Jalanan kota yang lengang di pagi hari" loading="lazy" decoding="async" data-fallback="Hujan">
+            <span class="g-overlay">
+              <span class="g-overlay__title">Jalan Kosong</span>
+              <span class="g-overlay__meta">Street · 2024</span>
+              <span class="g-overlay__zoom">
+                <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="6.5"/><path d="M16 16l5 5M11 8.5v5M8.5 11h5"/></svg>
+              </span>
+            </span>
+          </button>
+          <div class="g-info">
+            <h3>Jalan Kosong</h3>
+            <p>Jalanan · 2024</p>
+          </div>
+        </article>
+
+        <article class="g-card g-card--tall" data-cat="portrait" data-src="assets/img/gallery/10-portrait-c.jpg" data-title="Studio, 21:40" data-meta="Potret natural light · 2025 · 85mm f/1.8" data-reveal>
+          <button class="g-media" type="button" aria-label="Buka foto: Studio, 21:40">
+            <span class="ph" aria-hidden="true"></span>
+            <img src="assets/img/gallery/10-portrait-c.jpg" alt="Potret studio dengan cahaya biru lembut" loading="lazy" decoding="async" data-fallback="Sunyi">
+            <span class="g-overlay">
+              <span class="g-overlay__title">Studio, 21:40</span>
+              <span class="g-overlay__meta">Potret · 2025</span>
+              <span class="g-overlay__zoom">
+                <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="6.5"/><path d="M16 16l5 5M11 8.5v5M8.5 11h5"/></svg>
+              </span>
+            </span>
+          </button>
+          <div class="g-info">
+            <h3>Studio, 21:40</h3>
+            <p>Potret · 2025</p>
+          </div>
+        </article>
+
+        <article class="g-card" data-cat="landscape" data-src="assets/img/gallery/02-fog.jpg" data-title="Kabut Pagi di Dieng" data-meta="Dieng · 2024 · 24mm f/7.1" data-reveal>
+          <button class="g-media" type="button" aria-label="Buka foto: Kabut Pagi di Dieng">
+            <span class="ph" aria-hidden="true"></span>
+            <img src="assets/img/gallery/02-fog.jpg" alt="Bukit hijau diselimuti kabut pagi" loading="lazy" decoding="async" data-fallback="Terasering">
+            <span class="g-overlay">
+              <span class="g-overlay__title">Kabut Pagi di Dieng</span>
+              <span class="g-overlay__meta">Dieng · 2024</span>
+              <span class="g-overlay__zoom">
+                <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="6.5"/><path d="M16 16l5 5M11 8.5v5M8.5 11h5"/></svg>
+              </span>
+            </span>
+          </button>
+          <div class="g-info">
+            <h3>Kabut Pagi di Dieng</h3>
+            <p>Lanskap · 2024</p>
+          </div>
+        </article>
+
+        <article class="g-card" data-cat="detail" data-src="assets/img/gallery/12-camera-b.jpg" data-title="Kenangan &amp; Kertas" data-meta="Still life · 2024 · 60mm f/4" data-reveal>
+          <button class="g-media" type="button" aria-label="Buka foto: Kenangan &amp; Kertas">
+            <span class="ph" aria-hidden="true"></span>
+            <img src="assets/img/gallery/12-camera-b.jpg" alt="Kamera analog dan cetakan foto di atas peta" loading="lazy" decoding="async" data-fallback="Tekstur">
+            <span class="g-overlay">
+              <span class="g-overlay__title">Kenangan &amp; Kertas</span>
+              <span class="g-overlay__meta">Detail · 2024</span>
+              <span class="g-overlay__zoom">
+                <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="6.5"/><path d="M16 16l5 5M11 8.5v5M8.5 11h5"/></svg>
+              </span>
+            </span>
+          </button>
+          <div class="g-info">
+            <h3>Kenangan &amp; Kertas</h3>
+            <p>Detail · 2024</p>
+          </div>
+        </article>
+
+        <article class="g-card g-card--wide" data-cat="street" data-src="assets/img/gallery/07-city.jpg" data-title="Cahaya dari Atas" data-meta="New York · 2024 · 35mm f/2.8" data-reveal>
+          <button class="g-media" type="button" aria-label="Buka foto: Cahaya dari Atas">
+            <span class="ph" aria-hidden="true"></span>
+            <img src="assets/img/gallery/07-city.jpg" alt="Gedung-gedung tinggi saat matahari terbenam" loading="lazy" decoding="async" data-fallback="Cahaya dari Atas">
+            <span class="g-overlay">
+              <span class="g-overlay__title">Cahaya dari Atas</span>
+              <span class="g-overlay__meta">New York · 2024</span>
+              <span class="g-overlay__zoom">
+                <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="6.5"/><path d="M16 16l5 5M11 8.5v5M8.5 11h5"/></svg>
+              </span>
+            </span>
+          </button>
+          <div class="g-info">
+            <h3>Cahaya dari Atas</h3>
+            <p>Jalanan · 2024</p>
+          </div>
+        </article>
+
+        <article class="g-card" data-cat="landscape" data-src="assets/img/gallery/03-night-peak.jpg" data-title="Biru Sebelum Gelap" data-meta="Bromo · 2025 · 24mm f/5.6" data-reveal>
+          <button class="g-media" type="button" aria-label="Buka foto: Biru Sebelum Gelap">
+            <span class="ph" aria-hidden="true"></span>
+            <img src="assets/img/gallery/03-night-peak.jpg" alt="Gunung dan langit berbintang di malam hari" loading="lazy" decoding="async" data-fallback="Blue Hour">
+            <span class="g-overlay">
+              <span class="g-overlay__title">Biru Sebelum Gelap</span>
+              <span class="g-overlay__meta">Bromo · 2025</span>
+              <span class="g-overlay__zoom">
+                <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="6.5"/><path d="M16 16l5 5M11 8.5v5M8.5 11h5"/></svg>
+              </span>
+            </span>
+          </button>
+          <div class="g-info">
+            <h3>Biru Sebelum Gelap</h3>
+            <p>Lanskap · 2025</p>
+          </div>
+        </article>
+
+        <article class="g-card" data-cat="portrait" data-src="assets/img/gallery/09-portrait-b.jpg" data-title="Tatapan" data-meta="Potret · 2023 · 85mm f/2" data-reveal>
+          <button class="g-media" type="button" aria-label="Buka foto: Tatapan">
+            <span class="ph" aria-hidden="true"></span>
+            <img src="assets/img/gallery/09-portrait-b.jpg" alt="Potret close-up seorang pria" loading="lazy" decoding="async" data-fallback="Tatapan">
+            <span class="g-overlay">
+              <span class="g-overlay__title">Tatapan</span>
+              <span class="g-overlay__meta">Potret · 2023</span>
+              <span class="g-overlay__zoom">
+                <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="6.5"/><path d="M16 16l5 5M11 8.5v5M8.5 11h5"/></svg>
+              </span>
+            </span>
+          </button>
+          <div class="g-info">
+            <h3>Tatapan</h3>
+            <p>Potret · 2023</p>
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ======================= APPS ======================= -->
+  <section class="section apps" id="apps">
+    <div class="container">
+      <div class="section-head section-head--split">
+        <div>
+          <p class="eyebrow" data-reveal><span class="eyebrow__num">03</span> Aplikasi</p>
+          <h2 class="section-title" data-reveal>
+            Kode yang bisa kamu <em class="serif accent">pakai</em>.
+          </h2>
+          <p class="section-sub" data-reveal>
+            <strong>PAKU</strong> lahir dari kebiasaan saya mencatat pengeluaran di notes HP.
+            Sekarang jadi aplikasi Android yang rapi, cepat, dan sepenuhnya offline.
+          </p>
+        </div>
+        <div class="apps__badge" data-reveal>
+          <span class="badge-live"><i></i> APK gratis · v1.0.0</span>
+        </div>
+      </div>
+
+      <div class="app-showcase" data-reveal>
+        <div class="app-showcase__visual">
+          <div class="phone" data-tilt>
+            <span class="phone__glow" aria-hidden="true"></span>
+            <div class="phone__frame">
+              <span class="phone__notch" aria-hidden="true"></span>
+              <img class="phone__screen" id="appScreen"
+                   src="assets/img/paku/paku-beranda.png"
+                   alt="Tangkapan layar PAKU — halaman beranda"
+                   width="1080" height="2400" loading="lazy" decoding="async">
+            </div>
+            <span class="phone__caption" aria-hidden="true">PAKU / 1.0.0</span>
+          </div>
+
+          <div class="app-thumbs" role="tablist" aria-label="Pilih tangkapan layar PAKU">
+            <button class="app-thumb is-active" type="button" role="tab" aria-selected="true"
+                    data-shot="assets/img/paku/paku-beranda.png"
+                    data-alt="Tangkapan layar PAKU — halaman beranda"
+                    data-label="Beranda">
+              <img src="assets/img/paku/paku-beranda-thumb.png" alt="" width="270" height="600" loading="lazy" decoding="async">
+              <span>Beranda</span>
+            </button>
+            <button class="app-thumb" type="button" role="tab" aria-selected="false"
+                    data-shot="assets/img/paku/paku-statistik.png"
+                    data-alt="Tangkapan layar PAKU — halaman statistik"
+                    data-label="Statistik">
+              <img src="assets/img/paku/paku-statistik-thumb.png" alt="" width="270" height="600" loading="lazy" decoding="async">
+              <span>Statistik</span>
+            </button>
+            <button class="app-thumb" type="button" role="tab" aria-selected="false"
+                    data-shot="assets/img/paku/paku-catat.png"
+                    data-alt="Tangkapan layar PAKU — form catat transaksi"
+                    data-label="Catat">
+              <img src="assets/img/paku/paku-catat-thumb.png" alt="" width="270" height="600" loading="lazy" decoding="async">
+              <span>Catat</span>
+            </button>
+          </div>
+        </div>
+
+        <div class="app-showcase__copy">
+          <div class="app-showcase__head">
+            <img class="app-showcase__icon" src="assets/img/paku/paku-logo.png" alt="Logo aplikasi PAKU" width="60" height="60">
+            <div class="app-showcase__title">
+              <h3>PAKU</h3>
+              <p>PencAtat Keuangan kamU</p>
+            </div>
+            <span class="chip chip--solid">Android 8.0+</span>
+          </div>
+
+          <p class="app-showcase__desc">
+            Pencatat arus kas pribadi dengan diagram donat dan grafik enam bulan yang
+            bisa disentuh. Catat pemasukan dan pengeluaran, lihat ke mana uang pergi,
+            lalu ambil keputusan tanpa perlu akun atau koneksi internet.
+          </p>
+
+          <ul class="app-feats">
+            <li>Diagram donat &amp; grafik 6 bulan interaktif</li>
+            <li>Keypad angka khusus, format Rupiah otomatis</li>
+            <li>Pencarian, filter, dan geser untuk menghapus</li>
+            <li>Dua bahasa: Indonesia &amp; Inggris</li>
+            <li>Tema terang / gelap + onboarding</li>
+            <li>100% offline, tanpa iklan, tanpa akun</li>
+          </ul>
+
+          <div class="app-download">
+            <a class="btn btn--primary btn--lg" data-link="appPaku" href="assets/downloads/PAKU.apk" download data-magnetic>
+              <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3v12M7 11l5 5 5-5M4 20h16"/></svg>
+              <span>Unduh APK</span>
+              <span class="app-download__size">14,9 MB</span>
+            </a>
+            <a class="btn btn--ghost" data-link="appPakuRepo" href="https://github.com/maspram23/Android-Cash-FLow-APK" target="_blank" rel="noopener" data-magnetic>
+              <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M9 20c-4 1.2-4-2.2-5.5-2.7M15 21v-3.4c0-1 .1-1.4-.5-2 2.6-.3 4.6-1.3 4.6-5.2 0-1.2-.4-2.1-1.1-2.9.1-.3.5-1.5-.1-2.9 0 0-1-.3-3.2 1.2a10 10 0 0 0-5.4 0C7 4.3 6 4.6 6 4.6c-.6 1.4-.2 2.6-.1 2.9a4.2 4.2 0 0 0-1.1 2.9c0 3.9 2 4.9 4.6 5.2-.5.5-.6 1-.5 2V21"/></svg>
+              <span>Lihat di GitHub</span>
+            </a>
+          </div>
+
+          <p class="app-meta">
+            <span>v1.0.0</span>
+            <span>com.paku.keuangan</span>
+            <span>Tanpa iklan</span>
+            <span>Tanpa akun</span>
+          </p>
+
+          <details class="guide">
+            <summary>
+              <span>Cara mengunduh &amp; memasang</span>
+              <svg class="icon icon--sm" viewBox="0 0 24 24" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg>
+            </summary>
+            <ol class="guide__steps">
+              <li>
+                <span>01</span>
+                <div><strong>Unduh file APK</strong><p>Tekan <em>Unduh APK</em>. Kalau browser bertanya, pilih tetap unduh.</p></div>
+              </li>
+              <li>
+                <span>02</span>
+                <div><strong>Izinkan instalasi</strong><p>Buka file <code>PAKU.apk</code>, lalu aktifkan “Instal dari sumber tidak dikenal” bila diminta.</p></div>
+              </li>
+              <li>
+                <span>03</span>
+                <div><strong>Mulai mencatat</strong><p>Pilih mulai dari kosong atau dengan data contoh. Semua data tersimpan di HP-mu.</p></div>
+              </li>
+            </ol>
+            <div class="guide__shots">
+              <figure>
+                <img src="assets/img/guide/download-1.png" alt="Daftar file di repositori GitHub dengan file PAKU.apk" loading="lazy" decoding="async">
+                <figcaption>1. Buka repositori GitHub, temukan <code>PAKU.apk</code>.</figcaption>
+              </figure>
+              <figure>
+                <img src="assets/img/guide/download-2.png" alt="Tombol Download raw file di halaman file GitHub" loading="lazy" decoding="async">
+                <figcaption>2. Tekan tombol <strong>Download raw file</strong>.</figcaption>
+              </figure>
+            </div>
+            <p class="guide__note">Ini versi final PAKU. Karena dipasang langsung dari file APK (bukan lewat Play Store), Android mungkin meminta izin “Instal dari sumber tidak dikenal”. Aktifkan izin tersebut hanya untuk file yang kamu unduh dari situs ini.</p>
+          </details>
+        </div>
+      </div>
+
+      <p class="apps__note" data-reveal>
+        Dibangun dengan Kotlin + Jetpack Compose. Data tersimpan lokal di perangkatmu.
+      </p>
+    </div>
+  </section>
+
+  <!-- ======================= STORE / POD ======================= -->
+  <section class="section store" id="store">
+    <div class="store__aura" aria-hidden="true"></div>
+    <div class="container">
+      <div class="store__grid">
+        <div class="store__copy">
+          <p class="eyebrow" data-reveal><span class="eyebrow__num">04</span> Toko POD</p>
+          <h2 class="section-title" data-reveal>
+            Bawa pulang<br>
+            <em class="serif accent">sepotong</em> karyanya.
+          </h2>
+          <p class="section-sub" data-reveal>
+            Kaos, poster, dan tote bag dengan cetakan foto pilihan. Diproduksi
+            on-demand, dikirim langsung dari percetakan ke tanganmu.
+          </p>
+
+          <div class="store__points" data-reveal>
+            <span>✓ Print on demand</span>
+            <span>✓ Kualitas cetak tinggi</span>
+            <span>✓ Dikirim ke seluruh Indonesia</span>
+          </div>
+
+          <a class="btn btn--primary btn--lg store__cta" data-link="podStore" href="#" target="_blank" rel="noopener" data-magnetic data-reveal>
+            <span data-pod-label>Kunjungi Toko POD</span>
+            <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9"/></svg>
+          </a>
+          <p class="store__micro" data-reveal data-pod-micro>Preview koleksi — toko POD sedang disiapkan.</p>
+        </div>
+
+        <div class="store__products">
+          <article class="product" data-reveal data-tilt>
+            <div class="product__media">
+              <img src="assets/img/product-tee.jpg" alt="Kaos Golden Hour" loading="lazy" decoding="async" data-fallback="Kaos">
+              <span class="product__tag">Kaos</span>
+            </div>
+            <div class="product__info">
+              <h3>Golden Hour Tee</h3>
+              <p>Heavy cotton 24s</p>
+              <span class="product__price">Rp 149.000</span>
+            </div>
+          </article>
+          <article class="product" data-reveal data-tilt>
+            <div class="product__media">
+              <img src="assets/img/product-poster.jpg" alt="Poster Dieng 04:51" loading="lazy" decoding="async" data-fallback="Poster">
+              <span class="product__tag">Poster</span>
+            </div>
+            <div class="product__info">
+              <h3>Dieng 04:51</h3>
+              <p>A2 matte paper</p>
+              <span class="product__price">Rp 89.000</span>
+            </div>
+          </article>
+          <article class="product" data-reveal data-tilt>
+            <div class="product__media">
+              <img src="assets/img/product-tote.jpg" alt="Tote bag Frame 07" loading="lazy" decoding="async" data-fallback="Tote">
+              <span class="product__tag">Tote</span>
+            </div>
+            <div class="product__info">
+              <h3>Frame No. 07</h3>
+              <p>Canvas 12 oz</p>
+              <span class="product__price">Rp 119.000</span>
+            </div>
+          </article>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ======================= CONTACT ======================= -->
+  <section class="section contact" id="contact">
+    <div class="container">
+      <div class="contact__grid">
+        <div class="contact__copy">
+          <p class="eyebrow" data-reveal><span class="eyebrow__num">05</span> Kontak</p>
+          <h2 class="section-title" data-reveal>
+            Punya ide?<br>
+            <em class="serif accent">Ayo bikin.</em>
+          </h2>
+          <p class="section-sub" data-reveal>
+            Terbuka untuk sesi foto, pembuatan website, kolaborasi desain POD,
+            atau sekadar ngobrol soal lensa dan kode.
+          </p>
+
+          <div class="contact__direct" data-reveal>
+            <p class="contact__label">Email</p>
+            <button class="email-copy" id="emailCopy" type="button" data-copy="halo@maspram.com">
+              <span data-email-text>halo@maspram.com</span>
+              <svg class="icon icon--sm" viewBox="0 0 24 24" aria-hidden="true"><rect x="8" y="8" width="12" height="12" rx="2"/><path d="M16 8V5a1 1 0 0 0-1-1H5a1 1 0 0 0-1 1v10a1 1 0 0 0 1 1h3"/></svg>
+            </button>
+            <p class="contact__meta">
+              <span class="badge-live"><i></i> Biasanya membalas &lt; 24 jam</span>
+              <span>Yogyakarta, Indonesia (GMT+7)</span>
+            </p>
+          </div>
+
+          <ul class="socials" data-reveal aria-label="Media sosial">
+            <li><a data-link="instagram" href="#" target="_blank" rel="noopener" aria-label="Instagram">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3.5" y="3.5" width="17" height="17" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.2" cy="6.8" r="1.1" fill="currentColor" stroke="none"/></svg>
+            </a></li>
+            <li><a data-link="github" href="#" target="_blank" rel="noopener" aria-label="GitHub">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 20c-4 1.2-4-2.2-5.5-2.7M15 21v-3.4c0-1 .1-1.4-.5-2 2.6-.3 4.6-1.3 4.6-5.2 0-1.2-.4-2.1-1.1-2.9.1-.3.5-1.5-.1-2.9 0 0-1-.3-3.2 1.2a10 10 0 0 0-5.4 0C7 4.3 6 4.6 6 4.6c-.6 1.4-.2 2.6-.1 2.9a4.2 4.2 0 0 0-1.1 2.9c0 3.9 2 4.9 4.6 5.2-.5.5-.6 1-.5 2V21"/></svg>
+            </a></li>
+            <li><a data-link="tiktok" href="#" target="_blank" rel="noopener" aria-label="TikTok">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M14 3v10.5a3.5 3.5 0 1 1-3.5-3.5"/><path d="M14 5.5c.6 2 2.2 3.3 4.5 3.5"/></svg>
+            </a></li>
+            <li><a data-link="podStore" href="#" target="_blank" rel="noopener" aria-label="Toko POD">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4.5 8h15l-1.2 11.2a2 2 0 0 1-2 1.8H7.7a2 2 0 0 1-2-1.8L4.5 8Z"/><path d="M9 8V6.5a3 3 0 0 1 6 0V8"/></svg>
+            </a></li>
+          </ul>
+        </div>
+
+        <form class="contact__form" id="contactForm" data-reveal novalidate>
+          <div class="field">
+            <label for="name">Nama</label>
+            <input type="text" id="name" name="name" placeholder="Nama kamu" autocomplete="name" required>
+          </div>
+          <div class="field">
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" placeholder="nama@email.com" autocomplete="email" required>
+          </div>
+          <div class="field">
+            <label for="topic">Butuh apa?</label>
+            <div class="select-wrap">
+              <select id="topic" name="topic">
+                <option>Sesi foto</option>
+                <option>Website / aplikasi</option>
+                <option>Kolaborasi POD</option>
+                <option>Lainnya</option>
+              </select>
+              <svg class="icon icon--sm" viewBox="0 0 24 24" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg>
+            </div>
+          </div>
+          <div class="field">
+            <label for="message">Pesan</label>
+            <textarea id="message" name="message" rows="5" placeholder="Ceritakan idemu…" required></textarea>
+          </div>
+          <button class="btn btn--primary btn--block btn--lg" type="submit">
+            <span>Kirim Pesan</span>
+            <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12 20 4l-5 16-3.5-6.5L4 12Z"/></svg>
+          </button>
+          <p class="form__note">Form ini membuka aplikasi email kamu. Tidak ada data yang disimpan.</p>
+        </form>
+      </div>
+    </div>
+  </section>
+</main>
+
+<!-- ======================= FOOTER ======================= -->
+<footer class="footer">
+  <div class="container footer__inner">
+    <div class="footer__brand">
+      <img src="assets/img/logowh.png" alt="Logo Maspram" width="56" height="56">
+      <p>
+        <strong>Maspram</strong><br>
+        <span>Sigit Pramono — fotografi, kode, dan karya cetak.</span>
+      </p>
+    </div>
+
+    <nav class="footer__nav" aria-label="Navigasi footer">
+      <a href="#about">Tentang</a>
+      <a href="#gallery">Galeri</a>
+      <a href="#apps">Aplikasi</a>
+      <a href="#store">Toko</a>
+      <a href="#contact">Kontak</a>
+    </nav>
+
+    <div class="footer__bottom">
+      <p>© <span id="year">2026</span> Sigit Pramono. Dibuat dengan kopi &amp; cahaya.</p>
+      <button class="to-top" id="toTop" type="button" aria-label="Kembali ke atas">
+        <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 20V5M6 11l6-6 6 6"/></svg>
+      </button>
+    </div>
+  </div>
+</footer>
+
+<!-- ======================= LIGHTBOX ======================= -->
+<div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Penampil foto" hidden>
+  <div class="lightbox__backdrop" data-lb-close></div>
+  <button class="lb-btn lb-btn--close" type="button" data-lb-close aria-label="Tutup">
+    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6l12 12M18 6 6 18"/></svg>
+  </button>
+  <button class="lb-btn lb-btn--prev" type="button" id="lbPrev" aria-label="Foto sebelumnya">
+    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15 5 8 12l7 7"/></svg>
+  </button>
+  <button class="lb-btn lb-btn--next" type="button" id="lbNext" aria-label="Foto berikutnya">
+    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 5l7 7-7 7"/></svg>
+  </button>
+  <figure class="lightbox__figure">
+    <div class="lightbox__img-wrap">
+      <img id="lbImage" alt="">
+      <span class="lightbox__loader" aria-hidden="true"></span>
+    </div>
+    <figcaption class="lightbox__caption">
+      <div>
+        <h3 id="lbTitle"></h3>
+        <p id="lbMeta"></p>
+      </div>
+      <span class="lightbox__counter" id="lbCounter"></span>
+    </figcaption>
+  </figure>
+</div>
+
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+<script src="assets/js/config.js"></script>
+<script src="assets/js/main.js"></script>
 </body>
 </html>
